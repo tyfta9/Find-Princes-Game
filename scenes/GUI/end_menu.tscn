@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd0txm8ryqdpd"]
+
+[ext_resource type="Script" uid="uid://dclyt811tsihd" path="res://scripts/end_screen.gd" id="1_e27iy"]
+
+[node name="EndMenu" type="CanvasLayer"]
+script = ExtResource("1_e27iy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -68.0
+offset_right = 560.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 48
+
+[node name="WonHSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer/WonHSplitContainer"]
+layout_mode = 2
+
+[node name="EndLabel" type="Label" parent="MarginContainer/VBoxContainer/WonHSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "You Won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreHSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer/ScoreHSplitContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer/ScoreHSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Your score: 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopTimeHSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer/TopTimeHSplitContainer"]
+layout_mode = 2
+
+[node name="TopTimeLabel" type="Label" parent="MarginContainer/VBoxContainer/TopTimeHSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Your top time: 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeHSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer/TimeHSplitContainer"]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/TimeHSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Your time: 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 24
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="MarginContainer/VBoxContainer/ButtonsVBoxContainer"]
+layout_mode = 2
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer/ButtonsVBoxContainer/HSplitContainer2"]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBoxContainer/HSplitContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Restart"
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="MarginContainer/VBoxContainer/ButtonsVBoxContainer"]
+layout_mode = 2
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer/ButtonsVBoxContainer/HSplitContainer3"]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBoxContainer/HSplitContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Exit Game"

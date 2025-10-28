@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbnlnajj31mdh"]
+
+[ext_resource type="Script" uid="uid://dddiojvxvyp70" path="res://scripts/start_menu.gd" id="1_jvx3y"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jvx3y")
+
+[node name="StartMenu" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="StartMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -68.0
+offset_right = 560.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 48
+
+[node name="WonHSplitContainer" type="HSplitContainer" parent="StartMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Separator" type="Control" parent="StartMenu/MarginContainer/VBoxContainer/WonHSplitContainer"]
+layout_mode = 2
+
+[node name="GameLabel" type="Label" parent="StartMenu/MarginContainer/VBoxContainer/WonHSplitContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "Find your princes!"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Separator" type="Control" parent="StartMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator2" type="Control" parent="StartMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="StartMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 24
+
+[node name="StartHSplitContainer2" type="HSplitContainer" parent="StartMenu/MarginContainer/VBoxContainer/ButtonsVBoxContainer"]
+layout_mode = 2
+
+[node name="Separator" type="Control" parent="StartMenu/MarginContainer/VBoxContainer/ButtonsVBoxContainer/StartHSplitContainer2"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="StartMenu/MarginContainer/VBoxContainer/ButtonsVBoxContainer/StartHSplitContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Start Game"
+
+[node name="ExitHSplitContainer3" type="HSplitContainer" parent="StartMenu/MarginContainer/VBoxContainer/ButtonsVBoxContainer"]
+layout_mode = 2
+
+[node name="Separator" type="Control" parent="StartMenu/MarginContainer/VBoxContainer/ButtonsVBoxContainer/ExitHSplitContainer3"]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="StartMenu/MarginContainer/VBoxContainer/ButtonsVBoxContainer/ExitHSplitContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Exit Game"

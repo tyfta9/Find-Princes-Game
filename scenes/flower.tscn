@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://blypqsh2yum8t"]
+
+[ext_resource type="Texture2D" uid="uid://bjqjd1bmobhcm" path="res://sprites/princes.png" id="2_agc10"]
+[ext_resource type="Script" uid="uid://cfrxi04kemkyu" path="res://scripts/flower.gd" id="2_yoh7s"]
+[ext_resource type="AudioStream" uid="uid://cbasjc5lsw8my" path="res://sounds/power_up.wav" id="3_agc10"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqhtc"]
+atlas = ExtResource("2_agc10")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym8cu"]
+atlas = ExtResource("2_agc10")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ahwj"]
+atlas = ExtResource("2_agc10")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv3ss"]
+atlas = ExtResource("2_agc10")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlpni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqhtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym8cu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ahwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv3ss")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8x8dx"]
+radius = 8.0
+height = 28.0
+
+[node name="Flower" type="Node2D"]
+script = ExtResource("2_yoh7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -1)
+sprite_frames = SubResource("SpriteFrames_vlpni")
+autoplay = "default"
+frame_progress = 0.843588
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(2, 1)
+shape = SubResource("CapsuleShape2D_8x8dx")
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_agc10")
+bus = &"SFX"
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

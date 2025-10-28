@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b817pihuk6bvf"]
+
+[ext_resource type="Script" uid="uid://dcdw08hddtfkj" path="res://scripts/player_hp.gd" id="1_kbawo"]
+[ext_resource type="Texture2D" uid="uid://bcvw3i4xea5xb" path="res://sprites/hart.png" id="2_h7mbe"]
+
+[node name="PlayerHP" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kbawo")
+
+[node name="Hart" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_h7mbe")
+region_rect = Rect2(1, 34, 13, 13)

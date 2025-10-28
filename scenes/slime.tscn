@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctm4byanqshvh"]
+
+[ext_resource type="Script" uid="uid://2mo62i2ia2f6" path="res://scripts/slime.gd" id="1_p2gj0"]
+[ext_resource type="Texture2D" uid="uid://woqw8p6yg8ax" path="res://sprites/slime_green.png" id="2_n6pvg"]
+[ext_resource type="PackedScene" uid="uid://b53gjm5qdvswe" path="res://scenes/killzone.tscn" id="3_n6pvg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6pvg"]
+atlas = ExtResource("2_n6pvg")
+region = Rect2(0, 32, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
+atlas = ExtResource("2_n6pvg")
+region = Rect2(24, 32, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2npkn"]
+atlas = ExtResource("2_n6pvg")
+region = Rect2(48, 32, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd6lc"]
+atlas = ExtResource("2_n6pvg")
+region = Rect2(72, 32, 24, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6pvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjw23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2npkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd6lc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6pvg"]
+size = Vector2(10, 11)
+
+[node name="Slime" type="Node2D"]
+visibility_layer = 2
+z_index = 1
+script = ExtResource("1_p2gj0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_v5wyi")
+autoplay = "default"
+frame_progress = 0.698327
+
+[node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("3_n6pvg")]
+visibility_layer = 2
+position = Vector2(379.977, -16.6217)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
+visibility_layer = 2
+position = Vector2(-380, 19.1217)
+shape = SubResource("RectangleShape2D_n6pvg")
+
+[node name="RayCastRight" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(8, 1)
+target_position = Vector2(0, 9)
+
+[node name="RayCastLeft" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(-8, 1)
+target_position = Vector2(0, 9)

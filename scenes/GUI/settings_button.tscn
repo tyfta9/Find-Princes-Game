@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://41iruuu0bcrh"]
+
+[ext_resource type="Script" uid="uid://ds2swbm3grh56" path="res://scripts/settings_button.gd" id="1_jhpvv"]
+[ext_resource type="Texture2D" uid="uid://djofray05geh1" path="res://sprites/settings.png" id="2_4nxpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p8wc"]
+atlas = ExtResource("2_4nxpm")
+region = Rect2(65, 1, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v456u"]
+atlas = ExtResource("2_4nxpm")
+region = Rect2(33, 1, 30, 30)
+
+[node name="SettingsButton" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = -15.0
+script = ExtResource("1_jhpvv")
+
+[node name="SettingsButton" type="TouchScreenButton" parent="."]
+position = Vector2(-60, -30)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_5p8wc")
+texture_pressed = SubResource("AtlasTexture_v456u")
+action = "settings"

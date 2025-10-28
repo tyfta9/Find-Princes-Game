@@ -1,0 +1,284 @@
+[gd_scene load_steps=20 format=3 uid="uid://dyi56d0286mm2"]
+
+[ext_resource type="PackedScene" uid="uid://cr03qthmxiuew" path="res://scenes/player.tscn" id="2_pw63i"]
+[ext_resource type="PackedScene" uid="uid://m4o4n1mia8vr" path="res://scenes/1_level.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://blypqsh2yum8t" path="res://scenes/flower.tscn" id="4_gubc5"]
+[ext_resource type="PackedScene" uid="uid://b53gjm5qdvswe" path="res://scenes/killzone.tscn" id="4_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://dycb8lr4bbx4c" path="res://scenes/coin.tscn" id="6_c16ls"]
+[ext_resource type="PackedScene" uid="uid://ctm4byanqshvh" path="res://scenes/slime.tscn" id="7_c16ls"]
+[ext_resource type="PackedScene" uid="uid://rfo6p3i8cogb" path="res://scenes/secrete.tscn" id="8_18nlu"]
+[ext_resource type="PackedScene" uid="uid://cp5xn7hg5uymx" path="res://scenes/interface.tscn" id="9_c1pb6"]
+[ext_resource type="PackedScene" uid="uid://1kaekkwun2ve" path="res://scenes/platform.tscn" id="10_6wevv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gubc5"]
+distance = -15.0
+
+[sub_resource type="Animation" id="Animation_e1cbu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(768, -59.5)]
+}
+
+[sub_resource type="Animation" id="Animation_6wevv"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(768, -59.5), Vector2(848, -59.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mngbo"]
+_data = {
+&"RESET": SubResource("Animation_e1cbu"),
+&"move": SubResource("Animation_6wevv")
+}
+
+[sub_resource type="Animation" id="Animation_r6p65"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1264, -75.5)]
+}
+
+[sub_resource type="Animation" id="Animation_4w45t"]
+resource_name = "move"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1264, -75.5), Vector2(1408, -75.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_si52b"]
+_data = {
+&"RESET": SubResource("Animation_r6p65"),
+&"move": SubResource("Animation_4w45t")
+}
+
+[sub_resource type="Animation" id="Animation_rt2n2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(368, -123.5)]
+}
+
+[sub_resource type="Animation" id="Animation_01n6w"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(368, -123.5), Vector2(304, -123.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c16ls"]
+_data = {
+&"RESET": SubResource("Animation_rt2n2"),
+&"move": SubResource("Animation_01n6w")
+}
+
+[node name="Game" type="Node2D"]
+
+[node name="1Level" parent="." instance=ExtResource("3_7ykc4")]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_pw63i")]
+unique_name_in_owner = true
+position = Vector2(8, -12)
+
+[node name="Abyss" parent="." instance=ExtResource("4_pu3yx")]
+position = Vector2(0, 75)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Abyss"]
+position = Vector2(0, -15)
+shape = SubResource("WorldBoundaryShape2D_gubc5")
+metadata/_edit_lock_ = true
+
+[node name="Flower" parent="." instance=ExtResource("4_gubc5")]
+position = Vector2(1224, -92)
+metadata/_edit_lock_ = true
+
+[node name="Secrete" parent="." instance=ExtResource("8_18nlu")]
+position = Vector2(-32, -49)
+metadata/_edit_lock_ = true
+
+[node name="Platforms" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="MovingSandPlatform" parent="Platforms" instance=ExtResource("10_6wevv")]
+position = Vector2(768, -59.5)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MovingSandPlatform"]
+libraries = {
+&"": SubResource("AnimationLibrary_mngbo")
+}
+autoplay = "move"
+
+[node name="MovingGoldPlatform" parent="Platforms" instance=ExtResource("10_6wevv")]
+position = Vector2(1264, -75.5)
+region_rect = Rect2(16, 32, 32, 9)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MovingGoldPlatform"]
+libraries = {
+&"": SubResource("AnimationLibrary_si52b")
+}
+autoplay = "move"
+
+[node name="Platform" parent="Platforms" instance=ExtResource("10_6wevv")]
+position = Vector2(368, -123.5)
+region_rect = Rect2(16, 0, 32, 9)
+metadata/_edit_lock_ = true
+
+[node name="platform" type="AnimationPlayer" parent="Platforms/Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_c16ls")
+}
+autoplay = "move"
+
+[node name="Slimes" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Slime" parent="Slimes" instance=ExtResource("7_c16ls")]
+position = Vector2(184, -144)
+metadata/_edit_lock_ = true
+
+[node name="Slime3" parent="Slimes" instance=ExtResource("7_c16ls")]
+position = Vector2(904, -64)
+
+[node name="Slime4" parent="Slimes" instance=ExtResource("7_c16ls")]
+position = Vector2(1464, -96)
+
+[node name="Coins" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="coin" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(40, -8)
+metadata/_edit_lock_ = true
+
+[node name="coin2" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(184, -40)
+metadata/_edit_lock_ = true
+
+[node name="coin3" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(120, -120)
+metadata/_edit_lock_ = true
+
+[node name="coin4" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(280, -136)
+metadata/_edit_lock_ = true
+
+[node name="coin5" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(376, -104)
+metadata/_edit_lock_ = true
+
+[node name="coin6" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(440, -120)
+metadata/_edit_lock_ = true
+
+[node name="coin7" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(338, -136)
+metadata/_edit_lock_ = true
+
+[node name="coin8" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(536, -104)
+metadata/_edit_lock_ = true
+
+[node name="coin9" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(664, -24)
+metadata/_edit_lock_ = true
+
+[node name="coin10" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(744, -72)
+metadata/_edit_lock_ = true
+
+[node name="coin11" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(950, -105)
+metadata/_edit_lock_ = true
+
+[node name="coin12" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(1064, -104)
+metadata/_edit_lock_ = true
+
+[node name="coin13" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(888, -168)
+metadata/_edit_lock_ = true
+
+[node name="coin14" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(792, -184)
+metadata/_edit_lock_ = true
+
+[node name="coin15" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(1208, -184)
+metadata/_edit_lock_ = true
+
+[node name="coin16" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(1336, -152)
+metadata/_edit_lock_ = true
+
+[node name="coin17" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(1432, -152)
+metadata/_edit_lock_ = true
+
+[node name="coin18" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(1496, -126)
+metadata/_edit_lock_ = true
+
+[node name="coin19" parent="Coins" instance=ExtResource("6_c16ls")]
+position = Vector2(1240, -88)
+metadata/_edit_lock_ = true
+
+[node name="Interface" parent="." instance=ExtResource("9_c1pb6")]
+unique_name_in_owner = true

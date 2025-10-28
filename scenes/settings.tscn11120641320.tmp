@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://41iruuu0bcrh"]
+
+[ext_resource type="Texture2D" uid="uid://v0jjik4kjk8f" path="res://sprites/world_tileset.png" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://ds2swbm3grh56" path="res://scripts/settings.gd" id="1_r6d6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p8wc"]
+atlas = ExtResource("1_5p8wc")
+region = Rect2(112, 32, 16, 16)
+
+[node name="Settings" type="Node2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_r6d6q")
+
+[node name="Settings_button" type="TextureButton" parent="."]
+anchors_preset = -1
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = SubResource("AtlasTexture_5p8wc")

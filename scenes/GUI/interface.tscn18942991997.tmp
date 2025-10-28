@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp5xn7hg5uymx"]
+
+[ext_resource type="Script" uid="uid://cfabeyyumwjr7" path="res://scripts/interface.gd" id="1_s0di0"]
+[ext_resource type="PackedScene" uid="uid://b817pihuk6bvf" path="res://scenes/GUI/player_hp.tscn" id="1_t72xj"]
+[ext_resource type="PackedScene" uid="uid://41iruuu0bcrh" path="res://scenes/GUI/settings_button.tscn" id="2_s0di0"]
+[ext_resource type="PackedScene" uid="uid://7c4chfdq518m" path="res://scenes/GUI/settings_menu.tscn" id="3_uidac"]
+[ext_resource type="PackedScene" uid="uid://cv6ht4l7b2npu" path="res://scenes/GUI/score.tscn" id="4_66wtf"]
+[ext_resource type="PackedScene" uid="uid://milihb47aru0" path="res://scenes/stopwatch.tscn" id="5_mus13"]
+[ext_resource type="PackedScene" uid="uid://dlsnmcqrpu6bk" path="res://scenes/GUI/touch_controls.tscn" id="5_treak"]
+
+[node name="Interface" type="CanvasLayer" groups=["game_menu"]]
+script = ExtResource("1_s0di0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_right = 38.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 1000
+
+[node name="PlayerHP" parent="MarginContainer/VBoxContainer/HSplitContainer" instance=ExtResource("1_t72xj")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SettingsButton" parent="MarginContainer/VBoxContainer/HSplitContainer" instance=ExtResource("2_s0di0")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Score" parent="MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("4_66wtf")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Stopwatch" parent="MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("5_mus13")]
+unique_name_in_owner = true
+layout_mode = 2
+time_label_text = "Time:"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("3_uidac")]
+unique_name_in_owner = true
+visible = false
+
+[node name="TouchControls" parent="." instance=ExtResource("5_treak")]
+unique_name_in_owner = true

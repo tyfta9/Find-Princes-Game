@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlsnmcqrpu6bk"]
+
+[ext_resource type="Script" uid="uid://bofrkhsjfacbh" path="res://scripts/touch_controls.gd" id="1_4xols"]
+[ext_resource type="Texture2D" uid="uid://cmibl5ssqqere" path="res://sprites/touchButtons.png" id="1_70tsg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xols"]
+atlas = ExtResource("1_70tsg")
+region = Rect2(1, 1, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyu4q"]
+atlas = ExtResource("1_70tsg")
+region = Rect2(33, 1, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o6yl"]
+atlas = ExtResource("1_70tsg")
+region = Rect2(65, 1, 30, 30)
+
+[node name="TouchControls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4xols")
+
+[node name="LeftButtonControl" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 470.0
+offset_right = 60.0
+offset_bottom = 500.0
+scale = Vector2(5, 5)
+
+[node name="LeftButton" type="TouchScreenButton" parent="LeftButtonControl"]
+modulate = Color(1, 1, 1, 0.784314)
+texture_normal = SubResource("AtlasTexture_4xols")
+action = "move_left"
+visibility_mode = 1
+
+[node name="RightButtonControl" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+anchors_preset = 0
+offset_left = 220.0
+offset_top = 470.0
+offset_right = 250.0
+offset_bottom = 500.0
+scale = Vector2(5, 5)
+
+[node name="RightButton" type="TouchScreenButton" parent="RightButtonControl"]
+modulate = Color(1, 1, 1, 0.784314)
+texture_normal = SubResource("AtlasTexture_oyu4q")
+action = "move_right"
+visibility_mode = 1
+
+[node name="JumpButtonControl" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+anchors_preset = 0
+offset_left = 970.0
+offset_top = 470.0
+offset_right = 1000.0
+offset_bottom = 500.0
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="JumpButton" type="TouchScreenButton" parent="JumpButtonControl"]
+modulate = Color(1, 1, 1, 0.784314)
+texture_normal = SubResource("AtlasTexture_3o6yl")
+action = "jump"
+visibility_mode = 1
