@@ -20,6 +20,20 @@ You can make your own records by speed running but don't forget to collect all t
 
 And more importantly, just enjoy.
 
-## Game overview (with screenshots)
+## Game overview
 
 to be added..
+
+## Instructions to compile/contribute
+
+Download Godot engine from the official website. It's compatible with Windows, MacOS, Linux. 
+
+I assume you have git downloaded.
+
+1.Open PowerShell/Bash, navigate to the directory you want your project to be, copy the following command.
+
+```git clone [copy https link of the projec, e.g. https://github.com/tyfta9/Find-Princes-Game.git]```
+
+2.Open Godot and press import project, navigate to the directory you saved project to and cselect the the game project you cloned.
+
+3.Run the game.
