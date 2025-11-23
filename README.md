@@ -32,7 +32,8 @@ I assume you have git downloaded.
 
 1.Open PowerShell/Bash, navigate to the directory you want your project to be, copy the following command.
 
-```git clone [copy https link of the projec, e.g. https://github.com/tyfta9/Find-Princes-Game.git]```
+```git clone [project HTTPS link]```
+e.g git clone https://github.com/tyfta9/Find-Princes-Game.git
 
 2.Open Godot and press import project, navigate to the directory you saved project to and cselect the the game project you cloned.
 
