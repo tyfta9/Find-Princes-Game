@@ -22,19 +22,21 @@ And more importantly, just enjoy.
 
 ## Game overview
 
-to be added..
+to be changed..
+
+[gameplay video](https://github.com/user-attachments/assets/db8c8424-1c50-4abd-b72c-f8be6cd58c54)
 
 ## Instructions to compile/contribute
 
-Download Godot engine from the official website. It's compatible with Windows, MacOS, Linux. 
+Download [Godot](https://godotengine.org/) engine from the official website. It's compatible with Windows, MacOS, Linux. 
 
-I assume you have git downloaded.
+*I assume you have git downloaded.*
 
-1.Open PowerShell/Bash, navigate to the directory you want your project to be, copy the following command.
+1.Open PowerShell/Bash, navigate to the directory you want the project to be, copy the following command.
 
-```git clone [project HTTPS link]```
+>```git clone [project HTTPS link]```<br>
 e.g git clone https://github.com/tyfta9/Find-Princes-Game.git
 
-2.Open Godot and press import project, navigate to the directory you saved project to and cselect the the game project you cloned.
+2.Open Godot and press import project, navigate to the directory you saved project to and cselect the game project you cloned.
 
-3.Run the game.
+3.Open the game project and run the game.
