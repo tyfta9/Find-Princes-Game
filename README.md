@@ -22,9 +22,7 @@ And more importantly, just enjoy.
 
 ## Game overview
 
-to be changed..
-
-[gameplay video](https://github.com/user-attachments/assets/db8c8424-1c50-4abd-b72c-f8be6cd58c54)
+[gameplay video](https://github.com/user-attachments/assets/57c3d1b4-357e-4aad-b7d7-9517ed175aa8)
 
 ## Instructions to compile/contribute
 
